@@ -30,9 +30,7 @@
 •	clearGraph() function will reset the graph to 
 
 {
-    "nodes": [
-       
-    ],
+    "nodes": [],
     "link": []
 }
 
