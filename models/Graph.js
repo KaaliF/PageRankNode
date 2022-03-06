@@ -52,12 +52,12 @@ function calcultePageRank(node) {
 
   to.forEach((item, index) => {
     if (rank[item] === undefined)
-      value += (1 - 0.85) + (0.85 * (to.length / outBound[index].length))
+      value += (to.length / outBound[index].length)
     else {
-      value += (1 - 0.85) + (0.85 * (rank[item] / outBound[index].length))
+      value += (rank[item] / outBound[index].length)
     }
   });
-  return value;
+  return (1 - 0.85) + (0.85 * value);
 }
 // apply the page rank to all graph
 module.exports.pageRank = function () {
