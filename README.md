@@ -42,4 +42,7 @@
 
 •	Page rank is calculated up to accuracy to one interation.
 
+•	Damping factor is hardcoded
+
+
 
