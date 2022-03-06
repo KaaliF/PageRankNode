@@ -1,7 +1,7 @@
 const graph = {
   nodes: [],
   link: []
-};
+}
 let rank = {};
 module.exports.getGraph = function () {
   return graph;
@@ -51,12 +51,14 @@ function calcultePageRank(node) {
   let value = 0;
 
   to.forEach((item, index) => {
+
     if (rank[item] === undefined)
-      value += (to.length / outBound[index].length)
+      value += (1 / outBound[index].length)
     else {
       value += (rank[item] / outBound[index].length)
     }
   });
+
   return (1 - 0.85) + (0.85 * value);
 }
 // apply the page rank to all graph
