@@ -49,7 +49,7 @@ function calcultePageRank(node) {
   const to = NodeTo(node);
   const outBound = to.map((tonode) => NodeFrom(tonode));
   let value = 0;
-
+  const damping = 0.85;
   to.forEach((item, index) => {
 
     if (rank[item] === undefined)
@@ -59,7 +59,7 @@ function calcultePageRank(node) {
     }
   });
 
-  return (1 - 0.85) + (0.85 * value);
+  return (1 - damping) + (damping * value);
 }
 // apply the page rank to all graph
 module.exports.pageRank = function () {
